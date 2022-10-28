@@ -1,12 +1,13 @@
 import React from "react"
-import Form from "./react-101/components/Form";
+import Counter from "./react-101/components/Counter";
+
 
 
 
 function App() {
   return (
     <>
-   <Form/>
+   <Counter/>
     </>
  
   );
@@ -33,6 +34,7 @@ export default App;
 //      friends={["Ahmet" , "Murat" , "Ayşe" , "Fatma"]}  */}
 
 //      <Counter/>
+//       <Form/>
 
 //      {/* <User_2/> */}
 //      {/* <Colors/> */}

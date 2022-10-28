@@ -1,7 +1,24 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 function Counter() {
-    const [add, setAdd] = useState(0)
+    const [add, setAdd] = useState(0);
+
+    // useEffect(()=> {
+    //   console.log("bir state değişti");
+    // })
+    // useEffect(() => {
+    //   console.log("component mount edildi");
+    // } , []);
+  //   useEffect(()=> {
+  // console.log("add sürekli değişti")
+  //   }, [add])
+
+useEffect(() => {
+  setInterval(() => {
+setAdd((prev) => prev+1)
+  },1000)
+},[])
+
   return (
     <div>
       <h1>{add}</h1>
