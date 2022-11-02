@@ -1,5 +1,6 @@
 import React from "react"
 import Counter from "./react-101/components/Counter";
+import Users from "./react-201/components/Users";
 
 
 
@@ -7,7 +8,7 @@ import Counter from "./react-101/components/Counter";
 function App() {
   return (
     <>
-   <Counter/>
+   <Users/>
     </>
  
   );
