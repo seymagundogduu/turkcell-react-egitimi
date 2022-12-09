@@ -20,6 +20,9 @@ function Users() {
         //       axios(`https://jsonplaceholder.typicode.com/posts?userId=${res.data[0].id}`)  //idsi verilen veriye ulaşabiliyor
         //         .then((res) => setPosts(res.data));
         //     })
+        //     .catch(error) => {
+          //     console.log("error", error)  //hataları görmeme yardımcı olur
+        //      })
         //     .finally(() => setLoading(false));
 
         getData();
@@ -27,6 +30,7 @@ function Users() {
          
 
       const getData = async () => {
+        try{
           const {data: users} = await  axios("https://jsonplaceholder.typicode.com/users")
        
 
@@ -38,8 +42,15 @@ function Users() {
 
           console.log("users" , users);
           console.log("posts", posts);
-      
+        }catch(error){
+          console.log("error", error);
         }
+        }
+
+
+         (() => {
+          console.log('bu bir anonim fonksiyondur');
+         })();
 
   return (
     <div> Users 
