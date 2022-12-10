@@ -1,25 +1,35 @@
 import React , {useState} from "react"
-import Counter from "./react-101/components/Counter";
-import Users from "./react-201/components/Users";
+
 import "./App.css"
-import UserList from "./react-201/user-list-app/components/UserList";
-import UserDetail from "./react-201/user-list-app/components/UserDetail";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+  BrowserRouter,
+  Routes,
+} from "react-router-dom";
+import Home from "./react-201/routing/pages/Home";
+import Users from "./react-201/routing/pages/Users";
+import Contact from "./react-201/routing/pages/Contact";
+import Menu from "./react-201/routing/components/Menu";
+import UserDetail from "./react-201/routing/pages/UserDetail";
 
 
 
 function App() {
-   const [activeUserId, setActiveUserId] = useState(null);
+
    
   return (
-    <div className="App">
-      Active User ID: {activeUserId}
-   {/* <Users/> */}
-   <div> <UserList setActiveUserId={setActiveUserId}/> </div>
-
-   <div>
-    {activeUserId && (  <UserDetail  activeUserId={activeUserId}/>)}
-   </div>
-    </div>
+    <BrowserRouter>
+    <Menu/>
+    <Routes> 
+      <Route path="/" element={<Home/> } />
+      <Route path="users" element={<Users/>}/>
+      <Route path="users/:id" element={<UserDetail/>}/>
+      <Route path="contact" element={<Contact/>}/>
+    </Routes>
+    </BrowserRouter>
  
   );
 }
