@@ -3,7 +3,7 @@ import LangContext from '../contexts/LangContext'
 
 
 function ChangeLang() {
-    const {lang, setLang} = useContext(LangContext)
+    const {lang, setLang} = useContext(LangContext);
   return (
     <div>Aktif Dil: {lang}
     

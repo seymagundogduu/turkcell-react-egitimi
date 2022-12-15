@@ -1,26 +1,21 @@
 import React from "react";
 
-import "./App.css";
-import ChangeLang from "./react-301/components/ChangeLang";
-import ChangeTheme from "./react-301/components/ChangeTheme";
-import Footer from "./react-301/components/Footer";
+import "./react-301/styles.css";
+
 import { LangContextProvider } from "./react-301/contexts/LangContext";
 
 import { ThemeContextProvider } from "./react-301/contexts/ThemeContext";
+import Container from "./react-301/Container";
 
-function App() {
-  return (
-    <div>
+const App = () => (
+    < >
       <LangContextProvider>
       <ThemeContextProvider>
-        <ChangeTheme />
-        <hr/>
-        <ChangeLang />
-        <Footer />
+      <Container/>
       </ThemeContextProvider>
       </LangContextProvider>
-    </div>
+    </>
   );
-}
+
 
 export default App;
