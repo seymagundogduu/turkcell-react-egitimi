@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 
@@ -15,6 +16,17 @@ export const LangContextProvider = ({ children }) =>{
     return <LangContext.Provider value={values}>
         {children}
     </LangContext.Provider>
+}
+
+export const useLang = () =>{
+    const context = useContext(LangContext);
+
+    if(context === undefined){
+        throw new Error('useLang must be used within a LangProvider');
+
+    }
+
+    return context;
 }
 
 export default LangContext;

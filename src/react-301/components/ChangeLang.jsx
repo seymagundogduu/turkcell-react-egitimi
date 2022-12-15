@@ -1,9 +1,9 @@
-import React, {useContext} from 'react'
-import LangContext from '../contexts/LangContext'
+
+import {useLang} from '../contexts/LangContext'
 
 
 function ChangeLang() {
-    const {lang, setLang} = useContext(LangContext);
+    const {lang, setLang} = useLang();
   return (
     <div>Aktif Dil: {lang}
     
